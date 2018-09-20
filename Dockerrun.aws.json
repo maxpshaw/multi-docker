@@ -4,7 +4,20 @@
     {
       "name": "client",
       "image": "dreamzoner/multi-client",
-      "hostname": "client"
+      "hostname": "client",
+      "essential": false
+    },
+    {
+      "name": "server",
+      "image": "dreamzoner/multi-server",
+      "hostname": "api",
+      "essential": false
+    },
+    {
+      "name": "worker",
+      "image": "dreamzoner/multi-worker",
+      "hostname": "worker",
+      "essential": false
     }
   ]
 }
