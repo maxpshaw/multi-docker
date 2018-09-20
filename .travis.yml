@@ -13,3 +13,10 @@ after_success:
   - docker build -t dreamzoner/multi-nginx ./nginx
   - docker build -t dreamzoner/multi-server ./server
   - docker build -t dreamzoner/multi-worker ./worker
+  # Log in to the docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --pasword-stdin
+  # Take those images and push them to docker hub
+  - docker push dreamzoner/multi-client
+  - docker push dreamzoner/multi-nginx
+  - docker push dreamzoner/multi-server
+  - docker push dreamzoner/multi-worker
